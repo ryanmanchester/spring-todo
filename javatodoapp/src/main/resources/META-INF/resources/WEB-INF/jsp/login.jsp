@@ -5,7 +5,11 @@
     </title>
   </head>
   <body>
-  	<p>Welcome to login</p>
+  <div>
+   <h1>Welcome to login</h1>
+  	<pre>${error }</pre>
+  </div>
+  	
     <form>
     	Name: <input type="text" name="name">
     	Password: <input type="text" name="password">

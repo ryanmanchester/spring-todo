@@ -29,11 +29,9 @@ public class LoginController {
 		model.put("password", password);
 		
 		//Authentication logic
-		if(authService.authenticate(name, password)) {
-			return "welcome";
-		} else {
-			return "login";
-		}
+		if(authService.authenticate(name, password)) return "welcome";
+		model.put("error", "Invalid username or password");
+		return "login";
 		
 	}
 
