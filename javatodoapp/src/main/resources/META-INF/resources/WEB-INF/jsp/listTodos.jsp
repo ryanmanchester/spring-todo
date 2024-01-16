@@ -6,7 +6,7 @@
   </head>
   <body>
   	<h1>Welcome!</h1>
-  	<div>Your todos are: </div>
+  	<div>Your todos are: ${todos} </div>
   	
   </body>
 </html>
