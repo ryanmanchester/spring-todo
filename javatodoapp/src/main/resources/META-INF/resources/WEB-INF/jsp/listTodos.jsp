@@ -10,7 +10,7 @@
 	<div class="container">
 		<div>Welcome, ${name}!</div>
 		<hr>
-		<h1>Your To-dos are:</h1>
+		<h1>Your To-Dos</h1>
 		<table class="table">
 			<thead>
 				<tr>
