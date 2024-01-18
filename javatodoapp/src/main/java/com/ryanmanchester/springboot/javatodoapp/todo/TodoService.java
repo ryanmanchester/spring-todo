@@ -3,6 +3,7 @@ package com.ryanmanchester.springboot.javatodoapp.todo;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 import org.springframework.stereotype.Service;
 
@@ -25,6 +26,10 @@ public class TodoService {
 		Todo todo = new Todo(++todoCount, username, description, targetDate, done);
 		todos.add(todo);
 		
+	}
+	
+	public void deleteTodo(int id) {
+		todos.removeIf(todo -> todo.getId() == id);
 	}
 
 }
