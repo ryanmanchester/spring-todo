@@ -10,7 +10,7 @@
   	<pre>${error }</pre>
   </div>
   	
-    <form>
+    <form method="post">
     	Name: <input type="text" name="name">
     	Password: <input type="text" name="password">
     	<button type="submit">Submit</button>
