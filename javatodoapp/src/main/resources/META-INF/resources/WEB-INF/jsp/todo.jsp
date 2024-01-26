@@ -38,11 +38,8 @@
 		
 	</div>
 	
-	<script src="webjars/bootstrap/5.3.2/js/bootstrap.min.js"
-			type="text/javascript"></script>
-	<script src="webjars/jquery/3.7.1/jquery.min.js"
-			type="text/javascript"></script>
-	<script src="webjars/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+	
+	<%@ include file="common/footer.jspf" %>	
 	<script type="text/javascript">
 	$('#targetDate').datepicker({
 		format: 'yyyy-mm-dd'

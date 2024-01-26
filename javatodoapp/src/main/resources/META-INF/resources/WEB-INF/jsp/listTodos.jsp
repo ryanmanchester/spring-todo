@@ -38,10 +38,7 @@
 		<a href="add-todo" class="btn btn-success">Add To-do</a>
 	</div>
 	
-	<script src="webjars/bootstrap/5.3.2/js/bootstrap.min.js"
-			type="text/javascript"></script>
-		<script src="webjars/jquery/3.7.1/jquery.min.js"
-			type="text/javascript"></script>
+	<%@ include file="common/footer.jspf" %>
 </body>
 
 </html>
