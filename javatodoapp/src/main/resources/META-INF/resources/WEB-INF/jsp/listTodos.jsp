@@ -7,6 +7,7 @@
 <title>Welcome to Todo Page</title>
 </head>
 <body>
+	<%@ include file="common/navigation.jspf" %>
 	<div class="container">
 		<div>Welcome, ${name}!</div>
 		<hr>
