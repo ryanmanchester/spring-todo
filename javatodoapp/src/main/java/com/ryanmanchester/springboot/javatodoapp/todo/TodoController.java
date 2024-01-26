@@ -17,7 +17,13 @@ import jakarta.validation.Valid;
 @Controller
 @SessionAttributes("name")
 public class TodoController {
+	
 	private TodoService todoService;
+	
+	private String getUserName(ModelMap model) {
+		String username = (String) model.get("name");
+		return username;
+	}
 	
 	public TodoController(TodoService todoService) {
 		this.todoService = todoService;
@@ -25,14 +31,16 @@ public class TodoController {
 	
 	@RequestMapping("list-todos")
 	public String getTodos(ModelMap model) {
-		List<Todo> todos = todoService.findByUsername("Ryan");
+		String username = getUserName(model);
+		List<Todo> todos = todoService.findByUsername(username);
 		model.addAttribute("todos", todos);
 		return "listTodos";
 	}
+
 	
 	@RequestMapping(value="add-todo", method=RequestMethod.GET)
 	public String showTodoPage(ModelMap model) {
-		String username = (String)model.get("name");
+		String username = getUserName(model);
 		Todo todo = new Todo(0, username, "", LocalDate.now(), false);
 		model.put("todo", todo);
 		return "todo";
