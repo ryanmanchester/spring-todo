@@ -4,6 +4,8 @@ package com.ryanmanchester.springboot.javatodoapp.todo;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -21,8 +23,8 @@ public class TodoController {
 	private TodoService todoService;
 	
 	private String getUserName(ModelMap model) {
-		String username = (String) model.get("name");
-		return username;
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		return authentication.getName();
 	}
 	
 	public TodoController(TodoService todoService) {
