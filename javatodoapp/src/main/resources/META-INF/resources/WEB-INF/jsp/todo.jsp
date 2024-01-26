@@ -8,9 +8,10 @@
 	rel="stylesheet">
 
 <link href="webjars/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker.standalone.min.css" rel="stylesheet">
-<title>Add To-Do Page</title>
+
 </head>
 <body>
+	<%@ include file="common/header.jspf" %>
 	<%@ include file="common/navigation.jspf" %>
 	<div class="container">
 		<div>Welcome, ${name}!</div>

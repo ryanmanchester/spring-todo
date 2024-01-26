@@ -4,9 +4,10 @@
 <head>
 <link href="webjars/bootstrap/5.3.2/css/bootstrap.min.css"
 	rel="stylesheet">
-<title>Welcome to Todo Page</title>
+
 </head>
 <body>
+	<%@ include file="common/header.jspf" %>
 	<%@ include file="common/navigation.jspf" %>
 	<div class="container">
 		<div>Welcome, ${name}!</div>
