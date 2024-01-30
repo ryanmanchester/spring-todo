@@ -57,14 +57,17 @@ public class TodoController {
 		if(result.hasErrors()) {
 			return "todo";
 		}
-		String username = (String)model.get("name");
-		todoService.addTodo(username, todo.getDescription(), todo.getTargetDate(), false);
+		String username = getUserName(model);
+		todo.setUsername(username);
+		todoRepository.save(todo);
+		//todoService.addTodo(username, todo.getDescription(), todo.getTargetDate(), false);
 		return "redirect:list-todos";
 	}
 	
 	@RequestMapping("delete-todo")
 	public String deleteTodo(@RequestParam int id) {
-		todoService.deleteTodo(id);
+		todoRepository.deleteById(id);
+		//todoService.deleteTodo(id);
 		return "redirect:list-todos";
 	}
 	
