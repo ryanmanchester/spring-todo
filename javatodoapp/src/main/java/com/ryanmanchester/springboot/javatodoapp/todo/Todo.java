@@ -2,10 +2,17 @@ package com.ryanmanchester.springboot.javatodoapp.todo;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.Size;
 
+@Entity
 public class Todo {
+	@Id
+	@GeneratedValue
 	private int id;
+	
 	private String username;
 	@Size(min=10, message="Description must be at least 10 characters")
 	private String description;
