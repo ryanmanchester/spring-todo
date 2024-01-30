@@ -21,20 +21,24 @@ import jakarta.validation.Valid;
 public class TodoController {
 	
 	private TodoService todoService;
+	private TodoRepository todoRepository;
 	
 	private String getUserName(ModelMap model) {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		return authentication.getName();
 	}
 	
-	public TodoController(TodoService todoService) {
+	
+	public TodoController(TodoService todoService, TodoRepository todoRepository) {
 		this.todoService = todoService;
+		this.todoRepository = todoRepository;
 	}
 	
 	@RequestMapping("list-todos")
 	public String getTodos(ModelMap model) {
 		String username = getUserName(model);
-		List<Todo> todos = todoService.findByUsername(username);
+		List<Todo> todos = todoRepository.findByUsername(username);
+		
 		model.addAttribute("todos", todos);
 		return "listTodos";
 	}
