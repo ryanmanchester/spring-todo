@@ -3,6 +3,7 @@ package com.ryanmanchester.springboot.javatodoapp.todo;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -73,7 +74,7 @@ public class TodoController {
 	
 	@RequestMapping(value="update-todo", method=RequestMethod.GET)
 	public String showUpdateTodo(@RequestParam int id, ModelMap model) {
-		Todo todo = todoService.findById(id);
+		Optional<Todo> todo = todoRepository.findById(id);
 		model.addAttribute("todo", todo);
 		return "todo";
 	}
